@@ -12,27 +12,31 @@
 <body>
   <!-- ====== Header ====== -->
   <div class="header" role="banner">
-    <div class="logo" aria-label="Sanshi Gávea">
-      <img src="logosanshi.jpg" alt="Logo Sanshi Gávea" id="logoImg" />
-      <div class="brand">
-        <span class="title">Sanshi Gávea</span>
-        <span class="sub">Sushi • Sashimi • Combos</span>
+    <div class="header-inner">
+      <div class="logo" aria-label="Sanshi Gávea">
+        <img src="logosanshi.jpg" alt="Logo Sanshi Gávea" id="logoImg" />
+        <div class="brand">
+          <span class="title">Sanshi Gávea</span>
+          <span class="sub">Sushi • Sashimi • Combos</span>
+        </div>
       </div>
-    </div>
 
-    <div class="search-wrap">
-      <input id="searchInput" type="search" placeholder="Buscar item ou descrição..." aria-label="Buscar no cardápio">
-    </div>
+      <div class="search-wrap">
+        <input id="searchInput" type="search" placeholder="Buscar item ou descrição..." aria-label="Buscar no cardápio">
+      </div>
 
-    <div class="spacer"></div>
-    <div class="cart-mini" aria-live="polite">
-      <span>Itens</span>
-      <span class="badge" id="headerCount">0</span>
+      <div class="spacer"></div>
+      <div class="cart-mini" aria-live="polite">
+        <span>Itens</span>
+        <span class="badge" id="headerCount">0</span>
+      </div>
     </div>
   </div>
 
   <!-- ====== Categories Pills ====== -->
-  <nav class="categories" id="categories" aria-label="Categorias"></nav>
+  <nav class="categories" aria-label="Categorias">
+    <div class="categories-inner" id="categories"></div>
+  </nav>
 
   <!-- ====== Content ====== -->
   <main class="container" id="content"></main>
