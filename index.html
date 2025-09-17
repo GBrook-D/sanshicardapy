@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sanshi Gávea — Cardápio</title>
+<meta name="description" content="Cardápio interativo do Sanshi Gávea com pedido via WhatsApp" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Marcellus&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ====== Header ====== -->
+  <div class="header" role="banner">
+    <div class="logo" aria-label="Sanshi Gávea">
+      <img src="logosanshi.jpg" alt="Logo Sanshi Gávea" id="logoImg" />
+      <div class="brand">
+        <span class="title">Sanshi Gávea</span>
+        <span class="sub">Sushi • Sashimi • Combos</span>
+      </div>
+    </div>
+
+    <div class="search-wrap">
+      <input id="searchInput" type="search" placeholder="Buscar item ou descrição..." aria-label="Buscar no cardápio">
+    </div>
+
+    <div class="spacer"></div>
+    <div class="cart-mini" aria-live="polite">
+      <span>Itens</span>
+      <span class="badge" id="headerCount">0</span>
+    </div>
+  </div>
+
+  <!-- ====== Categories Pills ====== -->
+  <nav class="categories" id="categories" aria-label="Categorias"></nav>
+
+  <!-- ====== Content ====== -->
+  <main class="container" id="content"></main>
+
+  <!-- ====== Floating Cart (always visible) ====== -->
+  <button class="fab-cart" id="fabCart" aria-label="Ver carrinho">
+    <span class="dot" aria-hidden="true"></span>
+    <span id="fabText">Ver carrinho</span>
+    <span class="subtotal" id="fabSubtotal">R$ 0,00</span>
+  </button>
+
+  <!-- ====== Cart Drawer ====== -->
+  <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Carrinho">
+    <div class="backdrop" id="backdrop"></div>
+    <div class="panel" role="dialog" aria-modal="true">
+      <header>
+        <h3>Seu carrinho</h3>
+        <button class="x" id="closeDrawer" aria-label="Fechar">×</button>
+      </header>
+      <div class="content" id="cartList"></div>
+      <div class="footer">
+        <div class="row"><span>Subtotal</span><span id="subtotal">R$ 0,00</span></div>
+        <div class="row"><span>Entrega</span><span class="small">Confirmada no WhatsApp</span></div>
+        <div class="hr"></div>
+        <div class="row total"><span>Total</span><span id="total">R$ 0,00</span></div>
+        <button class="btn btn-primary" id="btnCheckout">Enviar pedido pelo WhatsApp</button>
+        <button class="btn btn-ghost" id="btnClear">Limpar carrinho</button>
+        <div class="note">Ao finalizar, abriremos o WhatsApp com o resumo do pedido. Você pode editar a mensagem antes de enviar.</div>
+      </div>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
