@@ -151,3 +151,44 @@ h1,h2,h3{font-family:Marcellus,serif; letter-spacing:.2px}
 .hide{display:none !important}
 .hr{height:1px; background:var(--line); margin:8px 0}
 .center{display:flex; align-items:center; justify-content:center}
+
+/* === Tweaks Sep/2025 === */
+/* Logo maior e mais visível */
+.header .logo img{
+  height:56px; width:auto;
+  background:#fff;
+  padding:6px;
+  border-radius:12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,.08);
+  border:1px solid var(--line);
+}
+@media (max-width: 520px){
+  .header .logo img{ height:44px; padding:5px; }
+}
+
+/* FAB escondido quando vazio */
+.fab-cart.hidden{
+  transform:translateX(-50%) translateY(80px);
+  opacity:0;
+  pointer-events:none;
+  transition:transform .25s ease, opacity .25s ease;
+}
+
+/* Badge “Itens” cinza quando zero */
+.header .badge.zero{ background:#b6bcc6; color:#fff; }
+
+/* Placeholder de imagem mais elegante */
+.card .thumb.placeholder{
+  display:flex; align-items:center; justify-content:center;
+  background:#eef1f3; color:#8a9099; font-weight:700; font-size:12px;
+  border:2px dashed #d7dbe2;
+}
+
+/* Mobile: cartões mais compactos */
+@media (max-width: 420px){
+  .card{padding:10px}
+  .card .title{font-size:14px}
+  .card .desc{font-size:12px}
+  .qty{gap:8px; padding:6px}
+  .qty button{width:32px; height:32px}
+}

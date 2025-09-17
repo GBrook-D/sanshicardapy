@@ -628,11 +628,17 @@ function clearCart(){
 }
 
 // UI sync
-function syncHeader(){ el('#headerCount').textContent = cartCount(); }
+function syncHeader(){
+  const count = cartCount();
+  const badge = el('#headerCount');
+  badge.textContent = count;
+  badge.classList.toggle('zero', count===0); // cinza quando zero
+}
 function syncFab(){
   const btn = el('#fabCart'); const sub = cartSubtotal();
   el('#fabSubtotal').textContent = fmtBRL(sub);
   btn.classList.toggle('enabled', sub>0);
+  btn.classList.toggle('hidden', sub<=0);   // esconde quando vazio
   el('#fabText').textContent = sub>0 ? 'Ver carrinho' : 'Carrinho vazio';
 }
 function syncCounts(){
